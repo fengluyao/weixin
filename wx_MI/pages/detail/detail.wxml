@@ -19,42 +19,39 @@
     </view>
     <!-- end-goods-swiper -->
     <view class="goods-desp">
-        <view class="weui-cells">
-            <view class="weui-cell">
-                <view class="weui-cell__bd">
-                    <view class="title">红米5A</view>
-                    <view class="desp">8天超长待机/137g轻巧机身/高通骁龙处理器  </view>
-                    <view class="meta">599元</view>
-                </view>
+        <view class="weui-cell">
+            <view class="weui-cell__bd">
+                <view class="title">红米5A</view>
+                <view class="desp">8天超长待机/137g轻巧机身/高通骁龙处理器  </view>
+                <view class="meta">599元</view>
             </view>
         </view>
+        <view class='line'></view>
         <view class="weui-cells select">
-            <view class="weui-cell__bd on-sale">
+            <view class="weui-cell__bg on-sale">
                 <text class="weui-cell__subtitle">促销</text>
                 <text class="weui-cell__strong">赠品</text>
-                <text>赠米粉卡</text>
+                <text class='mf'>米粉卡</text>
             </view>
-            <navigator class="weui-cell weui-cell_access" hover-class="none" url="../selectGoods/selectGoods?id={{goods.id}}">
-                <view class="weui-cell__bd selected">
-                    <text class="weui-cell__subtitle">已选</text>
-                    <text>{{goods.header}} {{goods.default[0]}} {{goods.default[1]}}</text>
-                    <text class="weui_cell__num">×{{goods.default[2]}}</text>
-                </view>
-                <view class="weui-cell__ft  weui-cell__ft_in-access"></view>
-            </navigator>
+            <view class="weui-cell__bg selected">
+                <text class="weui-cell__subtitle">已选</text>
+                <text class='cs'>红米5A 2GB+16GB 泊银灰</text>
+                <text class="weui_cell__num">×1</text>
+            </view>
+            <view class="weui-cell__ft  weui-cell__ft_in-access"></view>
             <view class="weui-cell weui-cell_promise">
                 <view class="weui-cell__hd success">
                     <image src="../../assets/icons/success.png" />
                 </view>
-                <text class="weui-cell__bd intro">7天无理由退货</text>
+                <text class="intro">7天无理由退货</text>
                 <view class="weui-cell__hd success">
                     <image src="../../assets/icons/success.png" />
                 </view>
-                <text class="weui-cell__bd intro">15天质量问题换货</text>
+                <text class="intro">15天质量问题换货</text>
                 <view class="weui-cell__hd success">
                     <image src="../../assets/icons/success.png" />
                 </view>
-                <text class="weui-cell__bd intro">365天保修</text>
+                <text class="intro">365天保修</text>
             </view>
         </view>
     </view>
@@ -63,17 +60,17 @@
             <view class="brief"><text class="{{selected?'on':''}}" bindtap="selectBrief">概述</text></view>
             <view class="parameter"><text class="{{selected1?'on':''}}" bindtap="selectParameter">参数</text></view>
         </view>
-        <view class="brief-info {{selected?'show':''}}" wx:for="{{goods.intro_img}}" wx:key="{{index}}">
-            <image src="{{item}}" mode="widthFix"/>
+        <view class="brief-info {{selected?'show':''}}">
+            <image src="../../assets/redMI5A/5.jpg" mode="widthFix"/>
+            <image src='../../assets/redMI5A/6.jpg' mode='widthFix'></image>
         </view>
-        <view class="parameter-info {{selected1?'show':''}}" wx:for="{{goods.parameter_img}}" wx:key="{{index}}">
-            <image src="{{item}}" mode="widthFix"/>
+        <view class='parameter-info {{selected1?"show":""}}'>
+          <image src='../../assets/redMI5A/7.jpg' mode='widthFix'></image>
+          <image src='../../assets/redMI5A/8.jpg' mode='widthFix'></image>
         </view>
     </view>
     <view class="user-operation">
         <view class="cart" bindtap="goCart">
-            <!-- <view ></view> -->
-            <text class="badge" wx:if="{{goods_num>0}}">{{goods_num}}</text>
             <image src="../../assets/icons/cart.png" />
         </view>
         <view class="add-cart" bindtap="toSelect" data-id="{{goods.id}}">加入购物车</view>
